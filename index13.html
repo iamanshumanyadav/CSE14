@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Block vs Inline</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      padding:40px;
+      display:flex;
+      justify-content:center;
+      background:#fff;
+    }
+
+    .page{
+      width:1100px;
+      max-width:100%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:32px;
+      margin-bottom:30px;
+      font-weight:700;
+      color:#2a4fa3;
+    }
+
+    .stage{
+      display:flex;
+      gap:60px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+
+    /* Block-level container */
+    .panel.block{
+      width:320px;
+      border:3px solid #adc6ff;
+      padding:20px;
+      border-radius:14px;
+    }
+
+    .stack{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .stack .box{
+      background:#e6eeff;
+      border:2px solid #adc6ff;
+      padding:25px;
+      text-align:center;
+      border-radius:10px;
+      font-size:20px;
+      font-weight:600;
+    }
+
+    /* Label outside */
+    .label{
+      margin-top:10px;
+      text-align:center;
+      font-size:18px;
+      font-weight:600;
+      color:#666;
+    }
+
+    /* Inline box section (centered) */
+    .inline-wrapper{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .panel.inline{
+      width:80%;
+      border:3px solid #f0c97a;
+      background:#fffaf1;
+      padding:25px;
+      border-radius:14px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .inline-row{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .inline-row .inline-box{
+      padding:18px 26px;
+      border:2px solid #f0c97a;
+      background:#fff3da;
+      border-radius:10px;
+      font-size:18px;
+      font-weight:600;
+    }
+
+    @media(max-width:900px){
+      .stage{
+        flex-direction:column;
+        align-items:center;
+      }
+      .panel.inline{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <h1 class="title">Major Versions of HTML</h1>
+
+    <div class="stage">
+
+      <!-- Block-Level example -->
+      <div>
+        <section class="panel block">
+          <div class="stack">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>
+          </div>
+        </section>
+
+        <!-- Label outside -->
+        <div class="label">Block-Level Element</div>
+      </div>
+
+      <!-- Inline example (centered) -->
+      <div class="inline-wrapper">
+        <section class="panel inline">
+          <div class="inline-row">
+            <div class="inline-box">Box 1</div>
+            <div class="inline-box">Box 2</div>
+            <div class="inline-box">Box 3</div>
+            <div class="inline-box">Box 4</div>
+          </div>
+        </section>
+
+        <!-- Label outside -->
+        <div class="label">Inline Element</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
