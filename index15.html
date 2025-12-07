@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar (No JS)</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000000;
+      padding: 15px 20px;
+      color: #fff;
+      position: relative;
+    }
+
+    /* Logo */
+    .logo a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #e9c46a;
+    }
+
+    /* Icons */
+    .icons a {
+      margin-left: 15px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    /* Hamburger checkbox (hidden) */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 768px) {
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        background: #264653;
+        flex-direction: column;
+        text-align: center;
+        transition: left 0.3s ease;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      /* Show menu when checkbox checked */
+      #menu-toggle:checked ~ .nav-links {
+        left: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="https://example.com" target="_blank">ShopEase</a>
+    </div>
+
+    <!-- CHECKBOX (controls menu) -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links">
+      <li><a href="https://example.com/home" target="_blank">Home</a></li>
+      <li><a href="https://example.com/shop" target="_blank">Shop</a></li>
+      <li><a href="https://example.com/deals" target="_blank">Deals</a></li>
+      <li><a href="https://example.com/contact" target="_blank">Contact</a></li>
+    </ul>
+
+    <!-- ICONS -->
+    <div class="icons">
+      <a href="https://example.com/cart" target="_blank">🛒</a>
+      <a href="https://example.com/login" target="_blank">👤</a>
+    </div>
+
+    <!-- HAMBURGER LABEL -->
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+  </nav>
+
+</body>
+</html>
